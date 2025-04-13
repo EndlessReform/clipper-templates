@@ -2,8 +2,6 @@
 	"schemaVersion": "0.1.0",
 	"name": "arXiv",
 	"behavior": "create",
-	"noteNameFormat": "{{title}}",
-	"path": "Clippings",
 	"noteContentFormat": "{{content}}",
 	"properties": [
 		{
@@ -35,9 +33,16 @@
 			"name": "arxiv",
 			"value": "{{url|split:\\\"/\\\"|slice:4|split:\\\"#\\\"|slice:0,1}}",
 			"type": "text"
+		},
+		{
+			"name": "status",
+			"value": "unread",
+			"type": "text"
 		}
 	],
 	"triggers": [
 		"https://arxiv.org/html/"
-	]
+	],
+	"noteNameFormat": "{{title}}",
+	"path": "Clippings"
 }
