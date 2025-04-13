@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "0.1.0",
+  "name": "arXiv Abstract Only",
+  "behavior": "create",
+  "noteContentFormat": "{{meta:name:citation_abstract}}",
+  "properties": [
+    {
+      "name": "title",
+      "value": "{{meta:name:citation_title}}",
+      "type": "text"
+    },
+    {
+      "name": "author",
+      "value": "{{selector:#abs .authors a|first}}",
+      "type": "text"
+    },
+    {
+      "name": "date",
+      "value": "{{meta:name:citation_date|date:\"YYYY-MM-DD\"}}",
+      "type": "date"
+    },
+    {
+      "name": "arxiv",
+      "value": "{{meta:name:citation_arxiv_id}}",
+      "type": "text"
+    },
+    {
+      "name": "url",
+      "value": "{{url}}",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "value": "unread",
+      "type": "text"
+    },
+    {
+      "name": "tags",
+      "value": "clippings",
+      "type": "multitext"
+    }
+  ],
+  "triggers": [
+    "https://arxiv.org/abs/"
+  ],
+  "noteNameFormat": "{{meta:name:citation_title}}",
+  "path": "Papers"
+}
